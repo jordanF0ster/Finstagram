@@ -96,11 +96,35 @@
                                 <action selector="didTapLogoutButton:" destination="Up3-fT-09B" id="td0-Yj-6GJ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="TRQ-OE-lmX">
+                            <connections>
+                                <action selector="didTapCameraButton:" destination="Up3-fT-09B" id="15V-MQ-QG0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="koo-vT-0eJ" kind="presentation" id="EFS-fo-bk2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wN8-ee-yGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3323" y="372"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xns-kl-jbs">
+            <objects>
+                <viewController id="0N5-BA-3oD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TYq-gK-Vn6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="As1-Py-wGj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Ci-Ln-gvJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7T-qY-3ik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5435" y="372"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VDr-pE-uSe">
@@ -200,8 +224,29 @@
             </objects>
             <point key="canvasLocation" x="2071" y="372"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uVd-0j-t2L">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="koo-vT-0eJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2hE-0E-rRh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0N5-BA-3oD" kind="relationship" relationship="rootViewController" id="C3B-4k-znD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u2C-Hq-N8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4525" y="372"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Uo3-JM-lDZ"/>
+        <segue reference="qWw-WM-ZjM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -67,6 +67,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)didTapCameraButton:(UIBarButtonItem *)sender {
+    [self createImageController];
+}
+
 /*
 #pragma mark - Navigation
 
