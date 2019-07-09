@@ -72,8 +72,8 @@
                         <outlet property="emailField" destination="Sk6-np-T1Z" id="hUd-Y1-fIs"/>
                         <outlet property="passwordField" destination="AdT-6b-Gdy" id="EBI-nL-E6d"/>
                         <outlet property="usernameField" destination="c13-8M-CVo" id="cPU-Dj-QOM"/>
-                        <segue destination="BiB-3Z-8Wc" kind="presentation" identifier="registerSegue" id="eXh-DA-mvF"/>
                         <segue destination="wkK-ZL-t6T" kind="presentation" identifier="registerToLoginSegue" id="sVY-wQ-fvn"/>
+                        <segue destination="ztg-Is-QI0" kind="presentation" identifier="registerSegue" id="iVy-2o-CjB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,30 +81,31 @@
             <point key="canvasLocation" x="138" y="-7"/>
         </scene>
         <!--Timeline View Controller-->
-        <scene sceneID="vfW-ln-9Fp">
+        <scene sceneID="AXB-g9-27O">
             <objects>
-                <viewController storyboardIdentifier="TimelineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="916-85-PXe" customClass="TimelineViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sBf-G8-P2O">
+                <viewController storyboardIdentifier="TimelineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Up3-fT-09B" customClass="TimelineViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b64-yu-1Kl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="rY8-s0-8oe"/>
+                        <viewLayoutGuide key="safeArea" id="f4y-Te-ZCd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Y36-Fr-2lG">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="JQT-R5-uzh"/>
+                    <navigationItem key="navigationItem" id="5P0-Sx-n2g">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="lfd-3U-6K2">
+                            <connections>
+                                <action selector="didTapLogoutButton:" destination="Up3-fT-09B" id="td0-Yj-6GJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="logutButton" destination="Y36-Fr-2lG" id="R4h-WD-UOj"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kOk-HG-KEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wN8-ee-yGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2673.913043478261" y="323.4375"/>
+            <point key="canvasLocation" x="2574" y="372"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="8M0-fB-wdG">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="wkK-ZL-t6T" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wkK-ZL-t6T" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mKg-R7-MNd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,8 +130,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="didTapLogin:" destination="wkK-ZL-t6T" eventType="touchUpInside" id="9hN-hX-SuD"/>
-                                    <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2S-6G-HVe"/>
+                                    <action selector="didTapLogin:" destination="wkK-ZL-t6T" eventType="touchUpInside" id="pF3-lM-roY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bup-xD-GGx">
@@ -139,8 +139,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <action selector="didTapSignUp:" destination="wkK-ZL-t6T" eventType="touchUpInside" id="94v-Mp-ITM"/>
                                     <action selector="didTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2o-H7-Cbp"/>
+                                    <action selector="didTapSignUp:" destination="wkK-ZL-t6T" eventType="touchUpInside" id="MBQ-cg-3eZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-Gh-nIn">
@@ -157,7 +157,7 @@
                     <connections>
                         <outlet property="passwordField" destination="IZG-MB-tPO" id="SGW-Ep-Zcf"/>
                         <outlet property="usernameField" destination="1L3-oR-fZd" id="yqb-sN-DwT"/>
-                        <segue destination="BiB-3Z-8Wc" kind="presentation" identifier="loginSegue" id="Yp1-fW-Jth"/>
+                        <segue destination="ztg-Is-QI0" kind="presentation" identifier="loginSegue" id="hEf-ee-kgw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6n7-88-KRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,25 +165,25 @@
             <point key="canvasLocation" x="138" y="784"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="a0v-Y2-w0U">
+        <scene sceneID="Qm3-uX-Qch">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BiB-3Z-8Wc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TimelineNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ztg-Is-QI0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NfI-rW-9f0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gZQ-nk-NXZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="916-85-PXe" kind="relationship" relationship="rootViewController" id="HwR-Kx-WaO"/>
+                        <segue destination="Up3-fT-09B" kind="relationship" relationship="rootViewController" id="7Te-Jw-2tf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a37-Hs-IJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyd-6g-xTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763.7681159420292" y="323.4375"/>
+            <point key="canvasLocation" x="1664" y="372"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Yp1-fW-Jth"/>
+        <segue reference="iVy-2o-CjB"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,9 +7,12 @@
 //
 
 #import "TimelineViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
+#import "LoginViewController.h"
 
 @interface TimelineViewController ()
-@property (weak, nonatomic) IBOutlet UINavigationItem *logutButton;
+
 
 @end
 
@@ -19,6 +22,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+- (IBAction)didTapLogoutButton:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+        
+        if (!error) {
+            AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+            appDelegate.window.rootViewController = loginViewController;
+        }
+    }];
+}
+
 
 /*
 #pragma mark - Navigation
