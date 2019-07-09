@@ -3,20 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A7A9D117DF2B46455846541 /* Pods_fbuigUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB6213DF393EE3C59C6C18A /* Pods_fbuigUITests.framework */; };
 		3D5861A1B273D95A7D93397E /* Pods_fbuig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF583F1E8031D62537D361F3 /* Pods_fbuig.framework */; };
 		640233E522D3FB4400BE3BFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 640233E422D3FB4400BE3BFA /* AppDelegate.m */; };
-		640233E822D3FB4400BE3BFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 640233E722D3FB4400BE3BFA /* ViewController.m */; };
+		640233E822D3FB4400BE3BFA /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 640233E722D3FB4400BE3BFA /* RegisterViewController.m */; };
 		640233EB22D3FB4400BE3BFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640233E922D3FB4400BE3BFA /* Main.storyboard */; };
 		640233ED22D3FB4500BE3BFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 640233EC22D3FB4500BE3BFA /* Assets.xcassets */; };
 		640233F022D3FB4500BE3BFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640233EE22D3FB4500BE3BFA /* LaunchScreen.storyboard */; };
 		640233F322D3FB4500BE3BFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 640233F222D3FB4500BE3BFA /* main.m */; };
 		640233FD22D3FB4500BE3BFA /* fbuigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 640233FC22D3FB4500BE3BFA /* fbuigTests.m */; };
 		6402340822D3FB4500BE3BFA /* fbuigUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6402340722D3FB4500BE3BFA /* fbuigUITests.m */; };
+		6402341822D4162800BE3BFA /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6402341722D4162800BE3BFA /* TimelineViewController.m */; };
+		6402341B22D4190B00BE3BFA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6402341A22D4190B00BE3BFA /* LoginViewController.m */; };
 		EFE00BD85097D338767A55DA /* Pods_fbuigTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33879D7F54A279B6C2E808F /* Pods_fbuigTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +47,8 @@
 		640233E022D3FB4400BE3BFA /* fbuig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbuig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		640233E322D3FB4400BE3BFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		640233E422D3FB4400BE3BFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		640233E622D3FB4400BE3BFA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		640233E722D3FB4400BE3BFA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		640233E622D3FB4400BE3BFA /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		640233E722D3FB4400BE3BFA /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		640233EA22D3FB4400BE3BFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		640233EC22D3FB4500BE3BFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		640233EF22D3FB4500BE3BFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,10 @@
 		6402340322D3FB4500BE3BFA /* fbuigUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fbuigUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6402340722D3FB4500BE3BFA /* fbuigUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fbuigUITests.m; sourceTree = "<group>"; };
 		6402340922D3FB4500BE3BFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6402341622D4162800BE3BFA /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		6402341722D4162800BE3BFA /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		6402341922D4190B00BE3BFA /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6402341A22D4190B00BE3BFA /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A33879D7F54A279B6C2E808F /* Pods_fbuigTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbuigTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A514CC99F04049AF1E9929D9 /* Pods-fbuigUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbuigUITests.release.xcconfig"; path = "Target Support Files/Pods-fbuigUITests/Pods-fbuigUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C6FB950D5755A2FE9907ACFE /* Pods-fbuig.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbuig.debug.xcconfig"; path = "Target Support Files/Pods-fbuig/Pods-fbuig.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,10 +134,9 @@
 		640233E222D3FB4400BE3BFA /* fbuig */ = {
 			isa = PBXGroup;
 			children = (
-				640233E322D3FB4400BE3BFA /* AppDelegate.h */,
-				640233E422D3FB4400BE3BFA /* AppDelegate.m */,
-				640233E622D3FB4400BE3BFA /* ViewController.h */,
-				640233E722D3FB4400BE3BFA /* ViewController.m */,
+				6402341522D40F3400BE3BFA /* View Controllers */,
+				6402341C22D41B5600BE3BFA /* API */,
+				6402341D22D41B6200BE3BFA /* Views */,
 				640233E922D3FB4400BE3BFA /* Main.storyboard */,
 				640233EC22D3FB4500BE3BFA /* Assets.xcassets */,
 				640233EE22D3FB4500BE3BFA /* LaunchScreen.storyboard */,
@@ -159,6 +164,35 @@
 			path = fbuigUITests;
 			sourceTree = "<group>";
 		};
+		6402341522D40F3400BE3BFA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				640233E622D3FB4400BE3BFA /* RegisterViewController.h */,
+				640233E722D3FB4400BE3BFA /* RegisterViewController.m */,
+				6402341922D4190B00BE3BFA /* LoginViewController.h */,
+				6402341A22D4190B00BE3BFA /* LoginViewController.m */,
+				6402341622D4162800BE3BFA /* TimelineViewController.h */,
+				6402341722D4162800BE3BFA /* TimelineViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6402341C22D41B5600BE3BFA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				640233E322D3FB4400BE3BFA /* AppDelegate.h */,
+				640233E422D3FB4400BE3BFA /* AppDelegate.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6402341D22D41B6200BE3BFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D1A79DFF192EC7A12C1A21D1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +203,6 @@
 				404F98625D06F54928E81445 /* Pods-fbuigUITests.debug.xcconfig */,
 				A514CC99F04049AF1E9929D9 /* Pods-fbuigUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -393,9 +426,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				640233E822D3FB4400BE3BFA /* ViewController.m in Sources */,
+				640233E822D3FB4400BE3BFA /* RegisterViewController.m in Sources */,
+				6402341822D4162800BE3BFA /* TimelineViewController.m in Sources */,
 				640233F322D3FB4500BE3BFA /* main.m in Sources */,
 				640233E522D3FB4400BE3BFA /* AppDelegate.m in Sources */,
+				6402341B22D4190B00BE3BFA /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
