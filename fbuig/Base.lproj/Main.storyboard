@@ -73,12 +73,12 @@
                         <outlet property="passwordField" destination="AdT-6b-Gdy" id="EBI-nL-E6d"/>
                         <outlet property="usernameField" destination="c13-8M-CVo" id="cPU-Dj-QOM"/>
                         <segue destination="wkK-ZL-t6T" kind="presentation" identifier="registerToLoginSegue" id="sVY-wQ-fvn"/>
-                        <segue destination="ztg-Is-QI0" kind="presentation" identifier="registerSegue" id="iVy-2o-CjB"/>
+                        <segue destination="xWl-Az-V1c" kind="presentation" identifier="registerSegue" id="qWw-WM-ZjM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-7"/>
+            <point key="canvasLocation" x="-935" y="-23"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="AXB-g9-27O">
@@ -100,7 +100,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wN8-ee-yGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="372"/>
+            <point key="canvasLocation" x="3323" y="372"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="VDr-pE-uSe">
+            <objects>
+                <tabBarController id="xWl-Az-V1c" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="344-9f-0Z6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ztg-Is-QI0" kind="relationship" relationship="viewControllers" id="oAA-kf-BzW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaW-jK-JgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="372"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="8M0-fB-wdG">
@@ -157,17 +174,18 @@
                     <connections>
                         <outlet property="passwordField" destination="IZG-MB-tPO" id="SGW-Ep-Zcf"/>
                         <outlet property="usernameField" destination="1L3-oR-fZd" id="yqb-sN-DwT"/>
-                        <segue destination="ztg-Is-QI0" kind="presentation" identifier="loginSegue" id="hEf-ee-kgw"/>
+                        <segue destination="xWl-Az-V1c" kind="presentation" identifier="loginSegue" id="Uo3-JM-lDZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6n7-88-KRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="784"/>
+            <point key="canvasLocation" x="-935" y="767"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="Qm3-uX-Qch">
             <objects>
                 <navigationController storyboardIdentifier="TimelineNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ztg-Is-QI0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="leY-gE-YYI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gZQ-nk-NXZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -180,10 +198,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyd-6g-xTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664" y="372"/>
+            <point key="canvasLocation" x="2071" y="372"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iVy-2o-CjB"/>
+        <segue reference="Uo3-JM-lDZ"/>
     </inferredMetricsTieBreakers>
 </document>
