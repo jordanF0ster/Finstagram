@@ -10,6 +10,8 @@
 
 @interface PostCell ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
@@ -28,7 +30,8 @@
     // Configure the view for the selected state
 }
 
-- (void)updateProperties:(UIImage *)image caption:(NSString *) text {
+- (void)updateProperties:(NSString *)username postImage:(UIImage *)image caption:(NSString *)text {
+    self.usernameLabel.text = username;
     self.postImage.image = image;
     self.captionLabel.text = text;
 }

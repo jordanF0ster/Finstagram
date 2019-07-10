@@ -13,6 +13,8 @@
 #import "Post.h"
 #import "ComposeViewController.h"
 #import "PostCell.h"
+#import "DetailsViewController.h"
+//#import "DateTools.h"
 
 @interface TimelineViewController ()
 
@@ -30,12 +32,21 @@
     self.tableView.dataSource = self; // view controller is the data source
     self.tableView.delegate = self; // view controller is the delegate
     
-    [self fetchTweets];
+    [self fetchPosts];
+    
+    // Initialize a UIRefreshControl
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:refreshControl atIndex:0];
 }
 
-- (void) fetchTweets {
+- (void) fetchPosts {
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    [query includeKey:@"createdAt"];
+    
     //[query whereKey:@"likesCount" greaterThan:@0];
     query.limit = 20;
     
@@ -77,28 +88,57 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"timelineToDetailsSegue"]){
+        UITableViewCell *tappedCell = sender;
+    NSLog(@"%@", sender);
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+    Post *timelinePost = self.postsArray[indexPath.row];
+    
+    DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = timelinePost;
+    } else {
+        // do nothing
+    }
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.postsArray[indexPath.row];
     UIImage *image = [[UIImage alloc] initWithData:post.image.getData];
-    
-    [cell updateProperties:image caption:post.caption];
+    //NSString *username = post.author[@"username"];
+    // [post fetchIfNeeded];
+
+    [cell updateProperties:post.author.username postImage:image caption:post.caption];
     
     return cell;
 }
 
+//- (NSString *)timeFromNow{
+//    NSDate *date = [[NSDate alloc] init];
+//    return [date timeAgoSinceNow];
+//}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.postsArray.count;
+}
+
+// Makes a network request to get updated data
+// Updates the tableView with the new data
+// Hides the RefreshControl
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    
+    [self fetchPosts];
+    
+    [refreshControl endRefreshing];
 }
 
 @end

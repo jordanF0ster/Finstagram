@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PostCell : UITableViewCell
 
-- (void)updateProperties:(UIImage *)image caption:(NSString *) text;
+- (void)updateProperties:(NSString *)username postImage:(UIImage *)image caption:(NSString *)text;
 
 @end
 

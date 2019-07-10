@@ -25,6 +25,7 @@
     // Do any additional setup after loading the view.
 }
 
+// registers user
 - (void)registerUser {
     // initialize a user object
     PFUser *newUser = [PFUser user];

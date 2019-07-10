@@ -22,6 +22,7 @@
 		6402342122D527ED00BE3BFA /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 6402342022D527ED00BE3BFA /* Post.m */; };
 		6402342422D5482B00BE3BFA /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6402342322D5482B00BE3BFA /* PostCell.m */; };
 		6402342722D54D9200BE3BFA /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6402342622D54D9200BE3BFA /* ComposeViewController.m */; };
+		6402346E22D69AB800BE3BFA /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6402346D22D69AB800BE3BFA /* DetailsViewController.m */; };
 		EFE00BD85097D338767A55DA /* Pods_fbuigTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33879D7F54A279B6C2E808F /* Pods_fbuigTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		6402342322D5482B00BE3BFA /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		6402342522D54D9200BE3BFA /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		6402342622D54D9200BE3BFA /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		6402346C22D69AB800BE3BFA /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		6402346D22D69AB800BE3BFA /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		A33879D7F54A279B6C2E808F /* Pods_fbuigTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbuigTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A514CC99F04049AF1E9929D9 /* Pods-fbuigUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbuigUITests.release.xcconfig"; path = "Target Support Files/Pods-fbuigUITests/Pods-fbuigUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C6FB950D5755A2FE9907ACFE /* Pods-fbuig.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbuig.debug.xcconfig"; path = "Target Support Files/Pods-fbuig/Pods-fbuig.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				6402341722D4162800BE3BFA /* TimelineViewController.m */,
 				6402342522D54D9200BE3BFA /* ComposeViewController.h */,
 				6402342622D54D9200BE3BFA /* ComposeViewController.m */,
+				6402346C22D69AB800BE3BFA /* DetailsViewController.h */,
+				6402346D22D69AB800BE3BFA /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				640233F322D3FB4500BE3BFA /* main.m in Sources */,
 				6402342422D5482B00BE3BFA /* PostCell.m in Sources */,
 				640233E522D3FB4400BE3BFA /* AppDelegate.m in Sources */,
+				6402346E22D69AB800BE3BFA /* DetailsViewController.m in Sources */,
 				6402341B22D4190B00BE3BFA /* LoginViewController.m in Sources */,
 				6402342722D54D9200BE3BFA /* ComposeViewController.m in Sources */,
 			);

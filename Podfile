@@ -7,6 +7,7 @@ target 'fbuig' do
 
   # Pods for fbuig
   pod 'Parse'
+  pod 'DateTools'
 
   target 'fbuigTests' do
     inherit! :search_paths
