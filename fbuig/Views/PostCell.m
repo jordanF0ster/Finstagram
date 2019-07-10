@@ -7,6 +7,7 @@
 //
 
 #import "PostCell.h"
+
 @interface PostCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;

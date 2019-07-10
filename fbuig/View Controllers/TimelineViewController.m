@@ -16,7 +16,7 @@
 
 @interface TimelineViewController ()
 
-@property (strong, nonatomic) NSMutableArray *postsArray;
+@property (strong, nonatomic) NSArray *postsArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -26,6 +26,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tableView.dataSource = self; // view controller is the data source
+    self.tableView.delegate = self; // view controller is the delegate
+    
+    [self fetchTweets];
+}
+
+- (void) fetchTweets {
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    //[query whereKey:@"likesCount" greaterThan:@0];
+    query.limit = 20;
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            // do something with the array of object returned by the call
+            self.postsArray = posts;
+            NSLog(@"COUNT: %lu", posts.count);
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 - (IBAction)didTapLogoutButton:(id)sender {
@@ -66,8 +90,9 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.postsArray[indexPath.row];
+    UIImage *image = [[UIImage alloc] initWithData:post.image.getData];
     
-    [cell updateProperties:post.image caption:post.caption];
+    [cell updateProperties:image caption:post.caption];
     
     return cell;
 }

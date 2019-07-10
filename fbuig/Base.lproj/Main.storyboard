@@ -100,18 +100,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="359.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0r-rd-fBa">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y0r-rd-fBa">
                                                     <rect key="frame" x="20" y="31" width="374" height="289"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="289" id="8WX-2Y-UKi"/>
+                                                        <constraint firstAttribute="width" constant="374" id="ACo-qh-QzJ"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-6m-34G">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-6m-34G">
                                                     <rect key="frame" x="20" y="328" width="374" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="eLe-6m-34G" secondAttribute="trailing" constant="20" id="6j2-i0-gWA"/>
+                                                <constraint firstItem="eLe-6m-34G" firstAttribute="leading" secondItem="Aeq-3d-49l" secondAttribute="leading" constant="20" id="D5V-tH-9TK"/>
+                                                <constraint firstItem="eLe-6m-34G" firstAttribute="top" secondItem="y0r-rd-fBa" secondAttribute="bottom" constant="8" id="LAd-Sa-lJN"/>
+                                                <constraint firstItem="y0r-rd-fBa" firstAttribute="leading" secondItem="Aeq-3d-49l" secondAttribute="leading" constant="20" id="MRo-k7-KHn"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eLe-6m-34G" secondAttribute="bottom" constant="10.5" id="Rvj-gx-qkm"/>
+                                                <constraint firstAttribute="trailing" secondItem="y0r-rd-fBa" secondAttribute="trailing" constant="20" id="hF0-Dg-b42"/>
+                                                <constraint firstItem="eLe-6m-34G" firstAttribute="top" secondItem="y0r-rd-fBa" secondAttribute="bottom" constant="8" id="lxH-2e-73z"/>
+                                                <constraint firstItem="y0r-rd-fBa" firstAttribute="top" secondItem="Aeq-3d-49l" secondAttribute="top" constant="31" id="u6g-Mw-aGw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionLabel" destination="eLe-6m-34G" id="hrl-MH-H4p"/>
