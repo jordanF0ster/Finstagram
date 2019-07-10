@@ -12,9 +12,12 @@
 #import "LoginViewController.h"
 #import "Post.h"
 #import "ComposeViewController.h"
+#import "PostCell.h"
 
 @interface TimelineViewController ()
 
+@property (strong, nonatomic) NSMutableArray *postsArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -59,5 +62,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    Post *post = self.postsArray[indexPath.row];
+    
+    [cell updateProperties:post.image caption:post.caption];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.postsArray.count;
+}
 
 @end

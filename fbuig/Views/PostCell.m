@@ -27,4 +27,9 @@
     // Configure the view for the selected state
 }
 
+- (void)updateProperties:(UIImage *)image caption:(NSString *) text {
+    self.postImage.image = image;
+    self.captionLabel.text = text;
+}
+
 @end
