@@ -87,6 +87,40 @@
                     <view key="view" contentMode="scaleToFill" id="b64-yu-1Kl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9li-U8-Q96">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="291" id="K2g-Av-Im1" customClass="PostCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="291"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K2g-Av-Im1" id="Aeq-3d-49l">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="290.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0r-rd-fBa">
+                                                    <rect key="frame" x="20" y="31" width="374" height="205"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-6m-34G">
+                                                    <rect key="frame" x="20" y="244" width="374" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="eLe-6m-34G" id="hrl-MH-H4p"/>
+                                            <outlet property="postImage" destination="y0r-rd-fBa" id="FEw-gN-4Pg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="f4y-Te-ZCd"/>
                     </view>
@@ -103,24 +137,49 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="koo-vT-0eJ" kind="presentation" id="EFS-fo-bk2"/>
+                        <segue destination="koo-vT-0eJ" kind="presentation" identifier="timelineToComposeSegue" id="EFS-fo-bk2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wN8-ee-yGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3323" y="372"/>
+            <point key="canvasLocation" x="3321.739130434783" y="371.65178571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Compose View Controller-->
         <scene sceneID="Xns-kl-jbs">
             <objects>
-                <viewController id="0N5-BA-3oD" sceneMemberID="viewController">
+                <viewController id="0N5-BA-3oD" customClass="ComposeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TYq-gK-Vn6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="fred" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Qz-xm-1Od">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="c7N-ju-SxY">
+                                <rect key="frame" x="87" y="170" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="As1-Py-wGj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6Ci-Ln-gvJ"/>
+                    <navigationItem key="navigationItem" id="6Ci-Ln-gvJ">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="0Gc-JR-ucC">
+                            <connections>
+                                <action selector="didTapPost:" destination="0N5-BA-3oD" id="u7D-Yv-XfF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="6Qz-xm-1Od" id="wXB-qm-VCC"/>
+                        <outlet property="postButton" destination="0Gc-JR-ucC" id="NIi-Lv-ahu"/>
+                        <outlet property="postImage" destination="c7N-ju-SxY" id="EoU-kA-o9m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7T-qY-3ik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,11 +264,11 @@
             </objects>
             <point key="canvasLocation" x="-935" y="767"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="Qm3-uX-Qch">
             <objects>
                 <navigationController storyboardIdentifier="TimelineNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ztg-Is-QI0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="leY-gE-YYI"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="feed_tab" id="leY-gE-YYI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gZQ-nk-NXZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -244,6 +303,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="feed_tab" width="25" height="25"/>
+        <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
