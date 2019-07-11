@@ -43,7 +43,7 @@
 }
 
 - (IBAction)didTapSignUp:(id)sender {
-    
+    [self performSegueWithIdentifier:@"loginToRegisterSegue" sender:nil];
 }
 
 /*

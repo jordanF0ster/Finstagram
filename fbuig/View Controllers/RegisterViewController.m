@@ -50,7 +50,7 @@
 
 - (IBAction)didTapLogin:(id)sender {
     // manually segue to logged in view
-    [self performSegueWithIdentifier:@"registerToLoginSegue" sender:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapSignUp:(id)sender {
