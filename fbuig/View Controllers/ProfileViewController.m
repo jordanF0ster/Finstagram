@@ -67,7 +67,9 @@
 - (void)updateProperties {
     NSData *imageData = [[PFUser.currentUser objectForKey:@"profilePicture"] getData];
     UIImage *proilePicture = [[UIImage alloc] initWithData:imageData];
-    self.profileImageView.image = proilePicture;
+    if (imageData) {
+        self.profileImageView.image = proilePicture;
+    }
     self.usernameLabel.text = PFUser.currentUser.username;
 }
 
