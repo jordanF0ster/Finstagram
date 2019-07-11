@@ -81,7 +81,6 @@
     PFFileObject *image = user[@"profilePicture"];
     image = [Post getPFFileFromImage:self.editProfileImageView.image];
     [user setObject:image forKey:@"profilePicture"];
-    NSLog(@"WWWWWW: %@", image);
     
     [user saveInBackground];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "PostCell.h"
+#import <Parse/Parse.h>
 
 @interface PostCell ()
 
@@ -30,10 +31,18 @@
     // Configure the view for the selected state
 }
 
-- (void)updateProperties:(NSString *)username postImage:(UIImage *)image caption:(NSString *)text {
-    self.usernameLabel.text = username;
+- (void)updateProperties:(PFUser *)user username:(NSString *)name postImage:(UIImage *)image caption:(NSString *)text {
+    self.usernameLabel.text = name;
     self.postImage.image = image;
     self.captionLabel.text = text;
+    
+    NSData *imageData = [[user objectForKey:@"profilePicture"] getData];
+    UIImage *proilePicture = [[UIImage alloc] initWithData:imageData];
+    
+    // if user has set a profile picture
+    if (imageData) {
+        self.profileImage.image = proilePicture;
+    }
 }
 
 @end

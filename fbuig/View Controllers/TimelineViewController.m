@@ -111,7 +111,7 @@
     //NSString *username = post.author[@"username"];
     // [post fetchIfNeeded];
 
-    [cell updateProperties:post.author.username postImage:image caption:post.caption];
+    [cell updateProperties:post.author username:post.author.username postImage:image caption:post.caption];
     
     return cell;
 }
