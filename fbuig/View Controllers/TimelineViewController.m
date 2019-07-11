@@ -45,6 +45,7 @@
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
     [query includeKey:@"createdAt"];
+    [query includeKey:@"profilePicture"];
     
     //[query whereKey:@"likesCount" greaterThan:@0];
     query.limit = 20;
@@ -92,12 +93,11 @@
     
     if ([[segue identifier] isEqualToString:@"timelineToDetailsSegue"]){
         UITableViewCell *tappedCell = sender;
-    NSLog(@"%@", sender);
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    Post *timelinePost = self.postsArray[indexPath.row];
-    
-    DetailsViewController *detailsViewController = [segue destinationViewController];
-        detailsViewController.post = timelinePost;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *timelinePost = self.postsArray[indexPath.row];
+        
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+            detailsViewController.post = timelinePost;
     } else {
         // do nothing
     }
