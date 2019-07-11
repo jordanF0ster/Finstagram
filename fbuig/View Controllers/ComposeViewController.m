@@ -45,7 +45,9 @@
 
 - (IBAction)didTapPost:(UITapGestureRecognizer *)sender  {
     [self postImageWithCaption];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.delegate didPost];
+    
 }
 
 - (void)createImageController {

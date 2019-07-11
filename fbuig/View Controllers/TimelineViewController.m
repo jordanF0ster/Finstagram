@@ -15,7 +15,7 @@
 #import "PostCell.h"
 #import "DetailsViewController.h"
 
-@interface TimelineViewController ()
+@interface TimelineViewController () <ComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *postsArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -129,6 +129,10 @@
     [self fetchPosts];
     
     [refreshControl endRefreshing];
+}
+
+- (void)didPost {
+    [self.tableView reloadData];
 }
 
 @end

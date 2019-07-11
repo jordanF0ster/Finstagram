@@ -176,7 +176,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9li-U8-Q96" id="t32-cg-5LN"/>
-                        <segue destination="koo-vT-0eJ" kind="presentation" identifier="timelineToComposeSegue" id="EFS-fo-bk2"/>
+                        <segue destination="0N5-BA-3oD" kind="show" identifier="timelineToComposeSegue" id="oYP-aU-iKp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wN8-ee-yGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,7 +283,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="VDr-pE-uSe">
             <objects>
-                <tabBarController id="xWl-Az-V1c" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="xWl-Az-V1c" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="344-9f-0Z6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -395,24 +395,6 @@
             </objects>
             <point key="canvasLocation" x="2952.1739130434785" y="1241.5178571428571"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uVd-0j-t2L">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="koo-vT-0eJ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2hE-0E-rRh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="0N5-BA-3oD" kind="relationship" relationship="rootViewController" id="C3B-4k-znD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u2C-Hq-N8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4622" y="-23"/>
-        </scene>
         <!--Item-->
         <scene sceneID="5Nb-Qr-INe">
             <objects>
@@ -440,6 +422,6 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qWw-WM-ZjM"/>
+        <segue reference="Uo3-JM-lDZ"/>
     </inferredMetricsTieBreakers>
 </document>
