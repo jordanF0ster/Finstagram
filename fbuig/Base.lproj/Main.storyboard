@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7T-qY-3ik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5532" y="-23"/>
+            <point key="canvasLocation" x="4551" y="-23"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="Buz-Ou-xvX">
@@ -232,7 +232,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLP-X7-zdE">
-                                <rect key="frame" x="20" y="276" width="374" height="344"/>
+                                <rect key="frame" x="0.0" y="276" width="414" height="344"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azr-H8-x5H">
@@ -242,8 +242,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post create by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcT-wr-2u1">
-                                <rect key="frame" x="20" y="166" width="153" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post created by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcT-wr-2u1">
+                                <rect key="frame" x="20" y="166" width="167" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -277,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kY4-LN-Ump" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5531.884057971015" y="766.74107142857144"/>
+            <point key="canvasLocation" x="4550.7246376811599" y="766.74107142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VDr-pE-uSe">
@@ -442,6 +442,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="userPostImageView" destination="dDB-1L-Mnx" id="jSf-Cm-vPW"/>
+                                            <segue destination="6Oq-Gb-YU5" kind="show" identifier="profileToDetailsSegue" id="FNa-A8-LPb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -511,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHa-7R-vea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3939" y="1242"/>
+            <point key="canvasLocation" x="4552" y="1563"/>
         </scene>
         <!--Item-->
         <scene sceneID="5Nb-Qr-INe">
@@ -541,5 +542,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qWw-WM-ZjM"/>
+        <segue reference="FNa-A8-LPb"/>
     </inferredMetricsTieBreakers>
 </document>

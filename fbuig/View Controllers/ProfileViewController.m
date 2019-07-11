@@ -11,6 +11,7 @@
 #import "EditProfileViewController.h"
 #import "Post.h"
 #import "PostCellCollectionViewCell.h"
+#import "DetailsViewController.h"
 
 @interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -45,7 +46,8 @@
     
     [query whereKey:@"author" equalTo:[PFUser currentUser]];
     [query orderByDescending:@"createdAt"];
-     
+    
+    [query includeKey:@"author"];
     //[query whereKey:@"likesCount" greaterThan:@0];
     query.limit = 20;
     
@@ -86,7 +88,7 @@
     self.collectionView.contentInsetAdjustmentBehavior = NO;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -94,16 +96,16 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([[segue identifier] isEqualToString:@"editProfileSegue"]) {
-        UITableViewCell *tappedCell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+    if ([[segue identifier] isEqualToString:@"profileToDetailsSegue"]) {
+        UICollectionViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
         Post *timelinePost = self.postsArray[indexPath.row];
         
-        EditProfileViewController *editProfileViewController = [segue destinationViewController];
-        //EditProfileViewController.post = timelinePost;
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = timelinePost;
     }
 }
-*/
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
