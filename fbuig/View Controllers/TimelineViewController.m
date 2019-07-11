@@ -46,6 +46,7 @@
     [query includeKey:@"author"];
     [query includeKey:@"createdAt"];
     [query includeKey:@"profilePicture"];
+    [query includeKey:@"likeCount"];
     
     //[query whereKey:@"likesCount" greaterThan:@0];
     query.limit = 20;
@@ -109,7 +110,7 @@
     Post *post = self.postsArray[indexPath.row];
     UIImage *image = [[UIImage alloc] initWithData:post.image.getData];
 
-    [cell updateProperties:post.author username:post.author.username postImage:image caption:post.caption];
+    [cell updateProperties:post.author username:post.author.username postImage:image caption:post.caption karmaWithPost:post];
     
     return cell;
 }

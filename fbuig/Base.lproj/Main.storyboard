@@ -93,11 +93,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="389" id="K2g-Av-Im1" customClass="PostCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="389"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="423" id="K2g-Av-Im1" customClass="PostCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="423"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K2g-Av-Im1" id="Aeq-3d-49l">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="388.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="422.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y0r-rd-fBa">
@@ -128,29 +128,60 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ws8-NA-Ydq">
+                                                    <rect key="frame" x="265" y="357" width="50" height="30"/>
+                                                    <state key="normal" title="Upvote"/>
+                                                    <connections>
+                                                        <action selector="didTapUpvote:" destination="K2g-Av-Im1" eventType="touchUpInside" id="sFL-p0-bQB"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTd-ko-do1">
+                                                    <rect key="frame" x="256" y="385" width="69" height="30"/>
+                                                    <state key="normal" title="Downvote"/>
+                                                    <connections>
+                                                        <action selector="didTapDownvote:" destination="K2g-Av-Im1" eventType="touchUpInside" id="tTe-h8-LIj"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-QU-SCI">
+                                                    <rect key="frame" x="345" y="371" width="16" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Kcz-QU-SCI" secondAttribute="bottom" constant="21.5" id="3hr-uK-aks"/>
+                                                <constraint firstItem="Kcz-QU-SCI" firstAttribute="leading" secondItem="Ws8-NA-Ydq" secondAttribute="trailing" constant="30" id="5dx-vz-dKg"/>
                                                 <constraint firstAttribute="trailing" secondItem="eLe-6m-34G" secondAttribute="trailing" constant="20" id="6j2-i0-gWA"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ws8-NA-Ydq" secondAttribute="bottom" constant="35.5" id="77f-Su-xX5"/>
                                                 <constraint firstItem="eLe-6m-34G" firstAttribute="leading" secondItem="Aeq-3d-49l" secondAttribute="leading" constant="20" id="D5V-tH-9TK"/>
                                                 <constraint firstItem="aYc-Ui-Zok" firstAttribute="top" secondItem="Aeq-3d-49l" secondAttribute="top" constant="11" id="FMz-bG-DcR"/>
                                                 <constraint firstItem="eLe-6m-34G" firstAttribute="top" secondItem="y0r-rd-fBa" secondAttribute="bottom" constant="8" id="LAd-Sa-lJN"/>
                                                 <constraint firstItem="y0r-rd-fBa" firstAttribute="leading" secondItem="Aeq-3d-49l" secondAttribute="leading" id="MRo-k7-KHn"/>
+                                                <constraint firstItem="Kcz-QU-SCI" firstAttribute="leading" secondItem="kTd-ko-do1" secondAttribute="trailing" constant="20" id="PEM-BW-hJm"/>
+                                                <constraint firstItem="Kcz-QU-SCI" firstAttribute="leading" secondItem="kTd-ko-do1" secondAttribute="trailing" constant="20" id="PP3-w2-YQF"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eLe-6m-34G" secondAttribute="bottom" constant="10.5" id="Rvj-gx-qkm"/>
                                                 <constraint firstItem="aYc-Ui-Zok" firstAttribute="leading" secondItem="Aeq-3d-49l" secondAttribute="leading" constant="20" id="V9l-Xa-dJi"/>
                                                 <constraint firstItem="p8M-v6-Ed7" firstAttribute="leading" secondItem="aYc-Ui-Zok" secondAttribute="trailing" constant="8" id="Yfa-fd-wyw"/>
+                                                <constraint firstItem="Ws8-NA-Ydq" firstAttribute="leading" secondItem="Aeq-3d-49l" secondAttribute="leading" constant="265" id="dUR-eX-35N"/>
                                                 <constraint firstAttribute="trailing" secondItem="y0r-rd-fBa" secondAttribute="trailing" id="hF0-Dg-b42"/>
+                                                <constraint firstAttribute="bottom" secondItem="kTd-ko-do1" secondAttribute="bottom" constant="7.5" id="jUx-Xm-qQ0"/>
                                                 <constraint firstItem="p8M-v6-Ed7" firstAttribute="leading" secondItem="aYc-Ui-Zok" secondAttribute="trailing" constant="8" id="l3u-BK-f4H"/>
                                                 <constraint firstItem="eLe-6m-34G" firstAttribute="top" secondItem="y0r-rd-fBa" secondAttribute="bottom" constant="8" id="lxH-2e-73z"/>
                                                 <constraint firstItem="p8M-v6-Ed7" firstAttribute="top" secondItem="Aeq-3d-49l" secondAttribute="top" constant="13" id="mj7-Pe-amQ"/>
                                                 <constraint firstItem="y0r-rd-fBa" firstAttribute="top" secondItem="aYc-Ui-Zok" secondAttribute="bottom" constant="8" id="tRA-mk-tQp"/>
                                                 <constraint firstItem="y0r-rd-fBa" firstAttribute="top" secondItem="Aeq-3d-49l" secondAttribute="top" constant="60" id="u6g-Mw-aGw"/>
+                                                <constraint firstItem="kTd-ko-do1" firstAttribute="top" secondItem="eLe-6m-34G" secondAttribute="bottom" constant="7.5" id="v24-Kt-dhR"/>
                                                 <constraint firstItem="y0r-rd-fBa" firstAttribute="top" secondItem="p8M-v6-Ed7" secondAttribute="bottom" constant="11" id="vda-hv-k5Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionLabel" destination="eLe-6m-34G" id="hrl-MH-H4p"/>
+                                            <outlet property="downvoteButton" destination="kTd-ko-do1" id="fUy-XS-Sgj"/>
+                                            <outlet property="karmaLabel" destination="Kcz-QU-SCI" id="vOj-l9-Q1s"/>
                                             <outlet property="postImage" destination="y0r-rd-fBa" id="FEw-gN-4Pg"/>
                                             <outlet property="profileImage" destination="aYc-Ui-Zok" id="2be-5L-ZHx"/>
+                                            <outlet property="upvoteButton" destination="Ws8-NA-Ydq" id="p91-ao-J3e"/>
                                             <outlet property="usernameLabel" destination="p8M-v6-Ed7" id="Sx5-ON-Ceo"/>
                                             <segue destination="6Oq-Gb-YU5" kind="show" identifier="timelineToDetailsSegue" id="bPA-39-dKn"/>
                                         </connections>
@@ -542,6 +573,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qWw-WM-ZjM"/>
-        <segue reference="FNa-A8-LPb"/>
+        <segue reference="bPA-39-dKn"/>
     </inferredMetricsTieBreakers>
 </document>
