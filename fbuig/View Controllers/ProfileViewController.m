@@ -1,52 +1,47 @@
 //
-//  ComposeViewController.m
+//  ProfileViewController.m
 //  fbuig
 //
-//  Created by jordan487 on 7/9/19.
+//  Created by jordan487 on 7/10/19.
 //  Copyright © 2019 jordan487. All rights reserved.
 //
 
-#import "ComposeViewController.h"
-#import "TimelineViewController.h"
+#import "ProfileViewController.h"
+#import "Parse/Parse.h"
 
-@interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
-@property (weak, nonatomic) IBOutlet UITextView *captionTextView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *postButton;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 
 @end
 
-@implementation ComposeViewController
+@implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapPostImage:)];
+    [self updateProperties];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapProfileImage:)];
     
     // Optionally set the number of required taps, e.g., 2 for a double click
     tapGestureRecognizer.numberOfTapsRequired = 1;
     
     // Attach it to a view of your choice. If it's a UIImageView, remember to enable user interaction
-    [self.postImage setUserInteractionEnabled:YES];
-    [self.postImage addGestureRecognizer:tapGestureRecognizer];
+    [self.profileImageView setUserInteractionEnabled:YES];
+    [self.profileImageView addGestureRecognizer:tapGestureRecognizer];
 }
 
-- (void)updateText: (UILabel *)label picture:(UIImageView *)image {
-    label.text = self.captionTextView.text;
-    image.image = self.postImage.image;
+- (void)updateProperties {
+    self.usernameLabel.text = PFUser.currentUser.username;
 }
 
-- (void)imageForCompose: (UIImage *)image {
-    self.postImage.image = image;
-}
-
-- (IBAction)didTapPost:(UITapGestureRecognizer *)sender  {
-    [self postImageWithCaption];
-    [self.navigationController popViewControllerAnimated:YES];
-    [self.delegate didPost];
-    
+- (IBAction)didTapProfileImage:(UITapGestureRecognizer *)sender {
+    NSLog(@"EEEEEEEEEEE");
+    [self createImageController];
 }
 
 - (void)createImageController {
@@ -74,25 +69,12 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    self.postImage.image = editedImage;
+    self.profileImageView.image = editedImage;
     // Do something with the images (based on your use case)
     
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)postImageWithCaption {
-    [Post postUserImage:self.postImage.image withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"Error FOR POSTING: %@", error.localizedDescription);
-        } 
-    }];
-}
-
-- (IBAction)didTapPostImage:(UITapGestureRecognizer *)sender {
-    NSLog(@"RRRRRRRRR");
-    [self createImageController];
 }
 
 /*
