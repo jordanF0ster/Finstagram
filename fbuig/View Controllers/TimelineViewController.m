@@ -14,7 +14,6 @@
 #import "ComposeViewController.h"
 #import "PostCell.h"
 #import "DetailsViewController.h"
-//#import "DateTools.h"
 
 @interface TimelineViewController ()
 
@@ -84,11 +83,6 @@
     [self createCaption];
 }
 
-- (void)didPost:(Post *)post {
-    
-}
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -122,16 +116,12 @@
     return cell;
 }
 
-//- (NSString *)timeFromNow{
-//    NSDate *date = [[NSDate alloc] init];
-//    return [date timeAgoSinceNow];
-//}
+
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.postsArray.count;
 }
 
-// Makes a network request to get updated data
 // Updates the tableView with the new data
 // Hides the RefreshControl
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {

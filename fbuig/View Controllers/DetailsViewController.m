@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "Post.h"
+#import "DateTools.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -33,7 +34,7 @@
     // gets data of from PFFileObject
     UIImage *postImage = [[UIImage alloc] initWithData:image.getData];
     self.detailsPostImageView.image = postImage;
-    self.dateCreatedLabel.text = [self getStringFromDate:date];
+    self.dateCreatedLabel.text = [NSString stringWithFormat:@"%@", [date timeAgoSinceNow]];
     self.captionLabel.text = caption;
 }
 
@@ -47,7 +48,10 @@
     return dateString;
 }
 
-
+- (NSString *)timeFromNow {
+    NSDate *date = [[NSDate alloc] init];
+    return [date timeAgoSinceNow];
+}
 
 /*
 #pragma mark - Navigation
