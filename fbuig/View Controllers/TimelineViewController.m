@@ -108,8 +108,6 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.postsArray[indexPath.row];
     UIImage *image = [[UIImage alloc] initWithData:post.image.getData];
-    //NSString *username = post.author[@"username"];
-    // [post fetchIfNeeded];
 
     [cell updateProperties:post.author username:post.author.username postImage:image caption:post.caption];
     

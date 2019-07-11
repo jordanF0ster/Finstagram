@@ -416,6 +416,36 @@
                                     <action selector="didTapEditProfileButton:" destination="N9e-OR-sdT" eventType="touchUpInside" id="usk-AV-Mao"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-mh-hvU">
+                                <rect key="frame" x="0.0" y="287" width="414" height="609"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gWT-rP-vbT">
+                                    <size key="itemSize" width="165" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCellCollectionViewCell" id="aGV-4P-OM8" customClass="PostCellCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dDB-1L-Mnx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="userPostImageView" destination="dDB-1L-Mnx" id="jSf-Cm-vPW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="a9g-A2-2Im"/>
@@ -423,6 +453,7 @@
                     <navigationItem key="navigationItem" id="zXu-4Q-b04"/>
                     <connections>
                         <outlet property="bioLabel" destination="gik-k8-mvg" id="fli-Ad-FId"/>
+                        <outlet property="collectionView" destination="fbj-mh-hvU" id="fUf-oW-4qW"/>
                         <outlet property="editProfileButton" destination="EaZ-GE-6vR" id="pUE-Ht-wi0"/>
                         <outlet property="profileImageView" destination="J4j-59-v1e" id="Maa-2t-Oa8"/>
                         <outlet property="usernameLabel" destination="P4k-ZY-DxI" id="bZ9-ZK-nBp"/>
