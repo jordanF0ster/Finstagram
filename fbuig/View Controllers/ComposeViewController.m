@@ -91,7 +91,7 @@
 }
 
 - (IBAction)didTapPostImage:(UITapGestureRecognizer *)sender {
-    NSLog(@"RRRRRRRRR");
+        NSLog(@"RRRRRRRRR");
     [self createImageController];
 }
 

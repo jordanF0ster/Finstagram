@@ -17,8 +17,10 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
-@dynamic upvoted;
-@dynamic downvoted;
+//@dynamic upvoted;
+//@dynamic downvoted;
+@dynamic usersWhoUpvote;
+@dynamic usersWhoDownvote;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -32,8 +34,10 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
-    newPost.upvoted = NO;
-    newPost.downvoted = NO;
+//    newPost.upvoted = NO;
+//    newPost.downvoted = NO;
+    newPost.usersWhoUpvote = [[NSMutableArray alloc] init];
+    newPost.usersWhoDownvote = [[NSMutableArray alloc] init];
     
     [newPost saveInBackgroundWithBlock: completion];
 }

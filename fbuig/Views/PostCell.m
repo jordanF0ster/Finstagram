@@ -56,7 +56,7 @@
 }
 
 - (void)refreshKarma {
-    int difference = [[self.currentPost objectForKey:@"likeCount"] intValue] + [[self.currentPost objectForKey:@"downvoteCount"] intValue];
+    int difference = [[self.currentPost objectForKey:@"likeCount"] intValue] - [[self.currentPost objectForKey:@"downvoteCount"] intValue];
     
     NSNumber *karmaCount = [NSNumber numberWithInteger:difference];
     self.karmaLabel.text = [NSString stringWithFormat:@"%@", karmaCount];
@@ -64,12 +64,28 @@
 
 - (IBAction)didTapUpvote:(id)sender {
     int upvoteCount;
-    if (!self.currentPost.upvoted) {
+    // if user has downvoted
+    if ([self.currentPost.usersWhoDownvote containsObject:PFUser.currentUser]) {
+        upvoteCount = [[self.currentPost objectForKey:@"likeCount"] intValue] + 2;
+        [self.currentPost.usersWhoUpvote insertObject:PFUser.currentUser atIndex:0];
+        [self.currentPost.usersWhoDownvote removeObject:PFUser.currentUser];
+        
+        UIImage *image = [UIImage imageNamed:@"red-arrow-up"];
+        [self.upvoteButton setImage:image forState:UIControlStateNormal];
+    // if user has NOT upvoted
+    } else if (![self.currentPost.usersWhoUpvote containsObject:PFUser.currentUser]){
         upvoteCount = [[self.currentPost objectForKey:@"likeCount"] intValue] + 1;
-        self.currentPost.upvoted = YES;
+        [self.currentPost.usersWhoUpvote insertObject:PFUser.currentUser atIndex:0];
+        
+        UIImage *image = [UIImage imageNamed:@"red-arrow-up"];
+        [self.upvoteButton setImage:image forState:UIControlStateNormal];
+    // if user has upvoted OR has NOT downvoted
     } else {
         upvoteCount = [[self.currentPost objectForKey:@"likeCount"] intValue] - 1;
-        self.currentPost.upvoted = NO;
+        [self.currentPost.usersWhoUpvote removeObject:PFUser.currentUser];
+        
+        UIImage *image = [UIImage imageNamed:@"gray-arrow-up"];
+        [self.upvoteButton setImage:image forState:UIControlStateNormal];
     }
     [self.currentPost setObject:[NSNumber numberWithInteger:upvoteCount] forKey:@"likeCount"];
     [self.currentPost saveInBackground];
@@ -78,12 +94,28 @@
 
 - (IBAction)didTapDownvote:(id)sender {
     int downvoteCount;
-    if (!self.currentPost.downvoted) {
-        downvoteCount = [[self.currentPost objectForKey:@"downvoteCount"] intValue] - 1;
-        self.currentPost.downvoted = YES;
-    } else {
+    // if user has upvoted
+    if ([self.currentPost.usersWhoUpvote containsObject:PFUser.currentUser]){
+        downvoteCount = [[self.currentPost objectForKey:@"downvoteCount"] intValue] + 2;
+        [self.currentPost.usersWhoDownvote insertObject:PFUser.currentUser atIndex:0];
+        [self.currentPost.usersWhoUpvote removeObject:PFUser.currentUser];
+        
+        UIImage *image = [UIImage imageNamed:@"blue-arrow"];
+        [self.downvoteButton setImage:image forState:UIControlStateNormal];
+    // if user has NOT downvoted
+    } else if (![self.currentPost.usersWhoDownvote containsObject:PFUser.currentUser]) {
         downvoteCount = [[self.currentPost objectForKey:@"downvoteCount"] intValue] + 1;
-        self.currentPost.downvoted = NO;
+        [self.currentPost.usersWhoDownvote insertObject:PFUser.currentUser atIndex:0];
+        
+        UIImage *image = [UIImage imageNamed:@"blue-arrow"];
+        [self.downvoteButton setImage:image forState:UIControlStateNormal];
+    // if user has downvoted OR has NOT upvoted
+    } else {
+        downvoteCount = [[self.currentPost objectForKey:@"downvoteCount"] intValue] - 1;
+        [self.currentPost.usersWhoDownvote removeObject:PFUser.currentUser];
+        
+        UIImage *image = [UIImage imageNamed:@"gray-arrow-down"];
+        [self.downvoteButton setImage:image forState:UIControlStateNormal];
     }
     [self.currentPost setObject:[NSNumber numberWithInteger:downvoteCount] forKey:@"downvoteCount"];
     [self.currentPost saveInBackground];
