@@ -30,6 +30,7 @@
     
     self.tableView.dataSource = self; // view controller is the data source
     self.tableView.delegate = self; // view controller is the delegate
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     [self fetchPosts];
     
@@ -107,6 +108,10 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    cell.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:.6];
+    cell.layer.cornerRadius = 20;
+    cell.layer.masksToBounds = YES;
+    
     Post *post = self.postsArray[indexPath.row];
     UIImage *image = [[UIImage alloc] initWithData:post.image.getData];
 
@@ -114,8 +119,6 @@
     
     return cell;
 }
-
-
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.postsArray.count;
@@ -131,7 +134,7 @@
 }
 
 - (void)didPost {
-    [self.tableView reloadData];
+    [self viewDidLoad];
 }
 
 @end
