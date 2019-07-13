@@ -72,6 +72,7 @@
 }
 
 - (IBAction)didTapFinishButton:(id)sender {
+    [self setBio];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -81,6 +82,13 @@
     PFFileObject *image = user[@"profilePicture"];
     image = [Post getPFFileFromImage:self.editProfileImageView.image];
     [user setObject:image forKey:@"profilePicture"];
+    
+    [user saveInBackground];
+}
+
+- (void)setBio {
+    PFUser *user = PFUser.currentUser;
+    [user setObject:self.editBioTextView.text forKey:@"bio"];
     
     [user saveInBackground];
 }

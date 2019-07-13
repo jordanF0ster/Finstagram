@@ -48,6 +48,7 @@
     [query includeKey:@"createdAt"];
     [query includeKey:@"profilePicture"];
     [query includeKey:@"likeCount"];
+    [query includeKey:@"bio"];
     
     //[query whereKey:@"likesCount" greaterThan:@0];
     query.limit = 20;

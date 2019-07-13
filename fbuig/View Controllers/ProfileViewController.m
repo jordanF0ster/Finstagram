@@ -32,6 +32,7 @@
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.collectionView.backgroundColor = [UIColor clearColor];
     
     [self updateProperties];
     [self fetchPostsCollectionView];
@@ -67,9 +68,18 @@
 - (void)updateProperties {
     NSData *imageData = [[PFUser.currentUser objectForKey:@"profilePicture"] getData];
     UIImage *proilePicture = [[UIImage alloc] initWithData:imageData];
+    NSString *bio = [PFUser.currentUser objectForKey:@"bio"];
+    
     if (imageData) {
         self.profileImageView.image = proilePicture;
     }
+    
+    if (bio) {
+        self.bioLabel.text = bio;
+    } else {
+        self.bioLabel.text = @"";
+    }
+    
     self.usernameLabel.text = PFUser.currentUser.username;
 }
 
@@ -112,6 +122,8 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     PostCellCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCellCollectionViewCell" forIndexPath:indexPath];
+    cell.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:.6];
+    
     Post *post = self.postsArray[indexPath.item];
     UIImage *image = [[UIImage alloc] initWithData:post.image.getData];
     
